@@ -22,7 +22,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Nunito',system-ui,sans-serif;background:var(--fondo);color:var(--texto);-webkit-font-smoothing:antialiased;padding-bottom:calc(var(--dock-h) + env(safe-area-inset-bottom))}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--fondo);color:var(--texto);-webkit-font-smoothing:antialiased}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input,select,textarea{font-family:inherit}
 a{color:inherit}
@@ -324,6 +324,73 @@ footer b{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--
 .q-tot{display:flex;justify-content:space-between;align-items:baseline;font-weight:900;margin-bottom:10px}
 .q-tot b{font-size:24px}
 .q-back{font-size:12px;font-weight:900;color:var(--gris);margin-top:10px}
+/* ---- Banner de inicio ---- */
+.banner{margin-top:18px;border-radius:26px;overflow:hidden;position:relative;color:#fff;
+  background:radial-gradient(120% 140% at 85% 20%,#2E9E5B 0%,#1E6B40 38%,#2A1E15 78%);display:grid;grid-template-columns:1.05fr 1fr;min-height:420px}
+.bn-txt{padding:44px 44px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.bn-eye{font-size:13px;font-weight:900;letter-spacing:.4px;opacity:.9}
+.bn-big{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:clamp(96px,14vw,168px);line-height:.82;letter-spacing:-4px;margin:10px 0 6px}
+.bn-big span:nth-child(1){color:var(--amarillo)}.bn-big span:nth-child(3){color:#fff}
+.banner h1{font-size:clamp(26px,3.4vw,40px);font-weight:900;line-height:1.05;letter-spacing:-.6px}
+.banner h1 em{font-style:normal;color:var(--amarillo)}
+.bn-sub{font-size:15px;font-weight:700;opacity:.9;margin-top:8px;max-width:420px;line-height:1.45}
+.bn-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.bn-pills span{background:#fff;color:var(--texto);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:900;display:inline-flex;gap:6px;align-items:center}
+.bn-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.bn-ctas a,.bn-ctas button{height:48px;border-radius:12px;padding:0 18px;font-weight:900;font-size:15px;display:inline-flex;align-items:center;text-decoration:none}
+.bn-ctas .c1{background:var(--amarillo);color:var(--texto)}
+.bn-ctas .c2{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.bn-fotos{position:relative;min-height:320px}
+.bn-f{position:absolute;width:46%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:#F6EEE3;border:6px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.35);display:grid;place-items:center;font-size:64px}
+.bn-f img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.bn-f:nth-child(1){left:6%;top:16%;transform:rotate(-8deg)}
+.bn-f:nth-child(2){left:40%;top:6%;transform:rotate(6deg);z-index:2}
+.bn-f:nth-child(3){left:28%;top:46%;transform:rotate(-2deg);z-index:3}
+.bn-tag{position:absolute;right:7%;bottom:12%;z-index:4;background:var(--c1);color:#fff;font-weight:900;font-size:15px;border-radius:999px;padding:10px 16px;transform:rotate(-6deg);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+/* ---- Encabezado de sección estilo "eyebrow" ---- */
+.sec-hd{margin:46px 0 14px}
+.sec-hd small{display:block;font-size:11px;font-weight:900;letter-spacing:1px;color:var(--gris);text-transform:uppercase}
+.sec-hd h2{font-size:clamp(24px,3vw,30px);font-weight:900;letter-spacing:-.5px;line-height:1.1}
+.sec-hd h2 em{font-style:normal;color:var(--acento)}
+.sec-hd p{font-size:13px;color:var(--gris);font-weight:700;margin-top:4px}
+/* ---- Videos ---- */
+.reel-wrap{position:relative}
+.reel-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:36px;height:36px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:18px;font-weight:900}
+.reel-nav.prev{left:-12px}.reel-nav.next{right:-12px}
+.reel .snd{position:absolute;right:8px;bottom:8px;z-index:3;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:14px;display:grid;place-items:center}
+.reel .rl{padding-right:44px}
+/* ---- Reseñas ---- */
+.rs-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.rs-prom{font-size:40px;font-weight:900;line-height:1}
+.rs-head small{font-size:11px;color:var(--gris);font-weight:800;line-height:1.3;display:block}
+.rs-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.rs-row::-webkit-scrollbar{display:none}
+.rs-card{flex:none;width:260px;scroll-snap-align:start;background:#fff;border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.rs-st{color:var(--amarillo);font-size:14px;letter-spacing:1px}
+.rs-card p{font-size:13px;line-height:1.5;color:var(--texto);flex:1}
+.rs-who{display:flex;gap:10px;align-items:center;border-top:1px solid var(--borde);padding-top:10px}
+.rs-av{width:30px;height:30px;border-radius:50%;background:var(--acento-soft);color:var(--acento-2);display:grid;place-items:center;font-weight:900;font-size:13px}
+.rs-who b{display:block;font-size:13px;font-weight:900}.rs-who span{font-size:11px;color:var(--gris);font-weight:700}
+.rs-cta{margin-top:12px;background:var(--fondo);border:1px solid var(--borde);border-radius:14px;padding:12px 14px;text-align:center;font-size:13px;font-weight:800}
+.rs-cta a{color:var(--acento-2)}
+/* ---- Footer ---- */
+footer.ft{background:linear-gradient(120deg,#2A1E15 0%,#3A2A1F 45%,#1E6B40 100%);color:#fff;text-align:left;padding:40px 0 calc(var(--dock-h) + 20px);border:none;font-size:13px}
+.ft-in{max-width:1180px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.ft-logo b{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:30px}
+.ft-logo b span:nth-child(6n+1){color:#FF7A6E}.ft-logo b span:nth-child(6n+2){color:#FFB04D}.ft-logo b span:nth-child(6n+3){color:#6FB2FF}
+.ft-logo b span:nth-child(6n+4){color:#5ED493}.ft-logo b span:nth-child(6n+5){color:#FFD55C}.ft-logo b span:nth-child(6n){color:#B996FF}
+.ft-logo .sp{display:inline-block;width:.28em}
+.ft-logo p{font-size:13px;opacity:.85;margin-top:6px;line-height:1.5;max-width:260px}
+.ft-soc{display:flex;gap:8px;margin-top:14px}
+.ft-soc a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;text-decoration:none;font-size:15px}
+.ft-col h4{font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:10px;opacity:.9}
+.ft-col a{display:block;color:#fff;text-decoration:none;font-weight:700;opacity:.85;margin-bottom:8px;font-size:13px}
+.ft-col a:hover{opacity:1;text-decoration:underline}
+.ft-col a.arrep{opacity:1;text-decoration:underline}
+.ft-col a[hidden],.ft-soc a[hidden]{display:none}
+.ft-bot{max-width:1180px;margin:26px auto 0;padding:0 20px}
+.ft-bar{background:rgba(255,255,255,.08);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;font-weight:700;opacity:.9}
+
 /* ---- FAQ en columnas ---- */
 .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
 .faq-col h3{font-size:15px;font-weight:900;margin-bottom:8px}
@@ -385,6 +452,15 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
   .vs-notas{grid-template-columns:1fr}
   .q-ops{grid-template-columns:1fr}
   .faq-grid,.ct-grid{grid-template-columns:1fr}
+  .banner{grid-template-columns:1fr;min-height:0;border-radius:20px}
+  .bn-txt{padding:26px 20px 8px}
+  .bn-big{font-size:104px;letter-spacing:-3px}
+  .bn-fotos{min-height:230px;margin:0 10px 10px}
+  .bn-f{width:44%}
+  .bn-ctas a,.bn-ctas button{flex:1;justify-content:center;padding:0 10px;font-size:13.5px;white-space:nowrap}
+  .reel-nav{display:none}
+  .ft-in{grid-template-columns:1fr 1fr;gap:22px}
+  .ft-logo{grid-column:1/-1}
   .wa-float{width:46px;height:46px;right:12px}
 }
 @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
@@ -421,11 +497,20 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
 </div>
 
 <main class="wrap" id="top">
+  <section class="banner" id="banner">
+    <div class="bn-txt">
+      <div class="bn-eye">🥥 JUEGOS DIDÁCTICOS DE MADERA</div>
+      <div class="bn-big" aria-hidden="true"><span>3</span><span>x</span><span>1</span></div>
+      <h1>Elegí <em>3</em> juegos.<br>Pagás el precio de <em>1</em>.</h1>
+      <p class="bn-sub">Rompecabezas, encastres, seriaciones y más, pensados para nivel inicial.</p>
+      <div class="bn-pills" id="bn-pills"></div>
+      <div class="bn-ctas"><a class="c1" href="#juegos">Armar mi pack →</a><button class="c2" onclick="abrirQuiz()">🎯 Que el Coco elija</button></div>
+    </div>
+    <div class="bn-fotos" id="bn-fotos"><div class="bn-f">🧩</div><div class="bn-f">🔷</div><div class="bn-f">📏</div><span class="bn-tag">¡3 al precio de 1!</span></div>
+  </section>
+
   <section class="hero">
     <div>
-      <div class="pills" id="pills"></div>
-      <h1>Elegí <span class="o">3</span> juegos.<br>Pagás el precio de <span class="o">1</span>.</h1>
-      <div class="mini" id="mini"></div>
       <div class="lead">
         <b>Armá tu pack en <span class="o">pocos clicks</span></b>
         <p>Tocá un juego para verlo en grande y sumarlo. Podés repetir el mismo o combinar distintos. Cada uno entra a tu pack y el 3x1 se activa al llegar a 3.</p>
@@ -442,12 +527,6 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
   </section>
   <div class="trustbar" id="trustbar"></div>
 
-  <section class="reels" id="reels" hidden>
-    <h2>Miralos en acción 🎬</h2>
-    <p>Tocá un video para ver el juego y sumarlo a tu pack.</p>
-    <div class="reel-row" id="reel-row"></div>
-  </section>
-
   <div id="juegos"></div>
   <div class="chips" id="chips"></div>
   <label class="search">
@@ -455,6 +534,22 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
     <input id="q" type="search" placeholder="Buscar juego por nombre" autocomplete="off">
   </label>
   <div class="grid" id="grid"></div>
+
+  <section class="reels" id="reels" hidden>
+    <div class="sec-hd"><small>En video</small><h2>Así se <em>juegan</em></h2><p>Videos reales de nuestros juegos. Tocá 🔊 para activar el sonido.</p></div>
+    <div class="reel-wrap">
+      <button class="reel-nav prev" onclick="moverReels(-1)" aria-label="Anterior">‹</button>
+      <div class="reel-row" id="reel-row"></div>
+      <button class="reel-nav next" onclick="moverReels(1)" aria-label="Siguiente">›</button>
+    </div>
+  </section>
+
+  <section id="resenas" hidden>
+    <div class="sec-hd"><small>Quienes ya compraron</small><h2>Lo que dicen <em>las familias y las seños</em></h2></div>
+    <div class="rs-head"><div class="rs-prom" id="rs-prom"></div><div><div class="rs-st" id="rs-st"></div><small id="rs-cant"></small></div></div>
+    <div class="rs-row" id="rs-row"></div>
+    <div class="rs-cta">¿Ya recibiste tu pack? <a href="#" id="rs-dejar" target="_blank" rel="noopener">Contanos qué te pareció →</a></div>
+  </section>
 
   <section class="info-sec" id="como">
     <h2>Cómo funciona el 3x1</h2>
@@ -533,14 +628,28 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
 
 <a class="wa-float" id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.34-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.1-1.47-1.1-2.8 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34l.51.01c.16.01.38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.88.27.13.45.2.52.31.07.11.07.65-.17 1.33z"/></svg></a>
 
-<footer>
-  <b>el coco didácticos</b><br>Juegos didácticos de madera · Envíos a todo el país
-  <nav class="legal">
-    <a href="#faq">Preguntas frecuentes</a><a href="#contacto">Contacto</a>
-    <a href="#" class="arrep" onclick="abrirArrep();return false">Botón de arrepentimiento</a>
-    <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor" target="_blank" rel="noopener">Defensa del Consumidor</a>
-    <a href="#" id="data-fiscal" target="_blank" rel="noopener" hidden>Data fiscal</a>
-  </nav>
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-logo">
+      <b aria-label="el coco"><span>e</span><span>l</span><i class="sp"></i><span>c</span><span>o</span><span>c</span><span>o</span></b>
+      <p>Juegos didácticos de madera para aprender jugando. Envíos a todo el país.</p>
+      <div class="ft-soc" id="ft-soc"></div>
+    </div>
+    <div class="ft-col"><h4>COMPRAR</h4>
+      <a href="#juegos">Armá tu pack 3x1</a><a href="#" onclick="abrirQuiz();return false">Que el Coco elija</a><a href="#como">Cómo funciona</a><a href="#vs">Por qué madera</a>
+    </div>
+    <div class="ft-col"><h4>AYUDA</h4>
+      <a href="#faq">Preguntas frecuentes</a><a href="#faq">Envíos y pagos</a><a href="#contacto">Contacto</a>
+      <a href="#" class="arrep" onclick="abrirArrep();return false">Botón de arrepentimiento</a>
+    </div>
+    <div class="ft-col"><h4>LA MARCA</h4>
+      <a href="#" id="ft-ig" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" id="ft-tt" target="_blank" rel="noopener" hidden>TikTok</a>
+      <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor" target="_blank" rel="noopener">Defensa del Consumidor</a>
+      <a href="#" id="data-fiscal" target="_blank" rel="noopener" hidden>Data fiscal</a>
+    </div>
+  </div>
+  <div class="ft-bot"><div class="ft-bar"><span>© <span id="ft-anio">2026</span> El Coco Didácticos · Hecho en Argentina</span><span>Desarrollo web propio</span></div></div>
 </footer>
 
 <div class="ov" id="arrep-ov" onclick="if(event.target===this)cerrarArrep()">
@@ -605,6 +714,11 @@ const TIENDA = {
   email: 'hola@elcocodidacticos.com.ar',   // mail de contacto (se crea gratis en Cloudflare → Email Routing)
   instagram: 'elcocodidacticos',           // usuario de Instagram, sin @
   dataFiscalUrl: '',                       // link del QR de Data Fiscal de ARCA (cuando lo tengas, pegalo acá)
+  tiktok: '',                              // usuario de TikTok sin @ (si lo tenés)
+
+  // Reseñas REALES de clientas. La sección aparece sola cuando hay al menos una.
+  // Formato: { texto: '...', nombre: 'Laura M.', lugar: 'Córdoba', estrellas: 5 }
+  resenas: [],
   metaPixelId: '',               // pegá el ID del pixel de Meta y se activa solo
 
   // El Coco: cuando tengas el dibujo, subilo al repo (ej: coco.png) y poné 'coco.png'. Mientras, se ve 🥥
@@ -816,12 +930,12 @@ function textosDinamicos(){
              `📦 CORREO ARGENTINO A TODO EL PAÍS`, `🪵 JUEGOS DIDÁCTICOS DE MADERA`].filter(Boolean);
   const h = t.map(x => `<span>${x}</span>`).join('');
   $('ticker').innerHTML = h + h;
-  $('pills').innerHTML =
+  if($('pills')) $('pills').innerHTML =
     `<span class="pill">🪵 Juegos de <span class="tag">madera</span></span>` +
     `<span class="pill">🎒 Para <span class="tag y">nivel inicial</span></span>` +
     `<span class="pill">🧩 ${Math.floor(PRODUCTOS.length/10)*10}+ juegos <span class="tag o">en ${N}x1</span></span>` +
     `<span class="pill">📦 Envíos a <span class="tag">todo el país</span></span>`;
-  $('mini').innerHTML = (cuotas ? `<span>${cuotas}</span>` : '') + `<span>Envío gratis desde ${gratis}</span>`;
+  if($('mini')) $('mini').innerHTML = (cuotas ? `<span>${cuotas}</span>` : '') + `<span>Envío gratis desde ${gratis}</span>`;
   if(cuotas) $('sb-cuotas').textContent = cuotas;
   const zonas = {}; Object.entries(c.envioPorProvincia).forEach(([p,v]) => (zonas[v] = zonas[v] || []).push(p));
   $('faq-envio').textContent = `Es gratis en compras desde ${gratis}. Debajo de ese monto depende de tu provincia: ` +
@@ -867,7 +981,8 @@ function renderReels(){
   if(!conVideo.length) return;
   $('reel-row').innerHTML = conVideo.map(p => `<div class="reel" data-id="${p.id}">
       <video src="${esc(videoDe(p.id))}" poster="${esc(imgUrl(p,500))}" muted loop playsinline preload="none"></video>
-      <div class="rl"><b>${esc(p.nombre)}</b><span>${fmt(p.precio)} · ${N}x1</span></div></div>`).join('');
+      <div class="rl"><b>${esc(p.nombre)}</b><span>${fmt(p.precio)} · ${N}x1</span></div>
+      <button class="snd" onclick="sonidoReel(this, event)" aria-label="Activar sonido">🔇</button></div>`).join('');
   const obs = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
     const v = e.target.querySelector('video'); if(e.isIntersecting){ v.play().catch(()=>{}); } else v.pause();
   }), { threshold: .6 }) : null;
@@ -989,6 +1104,51 @@ function jsonLD(){
       brand: { '@type':'Brand', name: 'El Coco Didácticos' },
       offers: { '@type':'Offer', price: p.precio, priceCurrency:'ARS', availability:'https://schema.org/InStock' } } })) };
   const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(data); document.head.appendChild(s);
+}
+
+/* ---------- Banner ---------- */
+function renderBanner(){
+  const cats = ['Rompecabezas','Encastres','Seriaciones','Apilables','Educativos'];
+  const elegidos = [];
+  for(const c of cats){ const p = PRODUCTOS.find(x => x.categoria === c && x.img && !elegidos.includes(x)); if(p) elegidos.push(p); if(elegidos.length === 3) break; }
+  const fotos = $('bn-fotos').querySelectorAll('.bn-f');
+  elegidos.forEach((p, i) => { if(fotos[i]) fotos[i].innerHTML = `${p.emoji || '🧸'}${imgTag(p, 600, `alt="${esc(p.nombre)}"`)}`; });
+  const cuotas = CONFIG.cuotasSinInteres > 1 ? `💳 ${CONFIG.cuotasSinInteres} cuotas sin interés` : '🔒 Pago seguro';
+  $('bn-pills').innerHTML = ['🪵 Hecho a mano', '🚚 Envíos a todo el país', cuotas].map(t => `<span>${t}</span>`).join('');
+}
+
+/* ---------- Reseñas reales ---------- */
+function renderResenas(){
+  const rs = (TIENDA.resenas || []).filter(r => r && r.texto && r.nombre);
+  $('rs-dejar').href = waLink('Hola! Quiero contarles qué me pareció mi pack de El Coco Didácticos');
+  if(!rs.length){ $('resenas').hidden = true; return; }
+  $('resenas').hidden = false;
+  const prom = rs.reduce((a, r) => a + (Number(r.estrellas) || 5), 0) / rs.length;
+  $('rs-prom').textContent = prom.toFixed(1).replace('.', ',');
+  $('rs-st').textContent = '★'.repeat(Math.round(prom)) + '☆'.repeat(5 - Math.round(prom));
+  $('rs-cant').textContent = rs.length === 1 ? '1 opinión' : `Promedio de ${rs.length} opiniones`;
+  $('rs-row').innerHTML = rs.map(r => { const e = Math.max(1, Math.min(5, Number(r.estrellas) || 5)); return `<div class="rs-card">
+    <div class="rs-st">${'★'.repeat(e)}${'☆'.repeat(5 - e)}</div><p>${esc(r.texto)}</p>
+    <div class="rs-who"><div class="rs-av">${esc(r.nombre.trim()[0].toUpperCase())}</div><div><b>${esc(r.nombre)}</b><span>${esc(r.lugar || 'Compra online')}</span></div></div></div>`; }).join('');
+}
+
+/* ---------- Footer ---------- */
+function renderFooter(){
+  $('ft-anio').textContent = new Date().getFullYear();
+  const soc = [];
+  if(TIENDA.instagram){ soc.push(`<a href="https://instagram.com/${esc(TIENDA.instagram)}" target="_blank" rel="noopener" aria-label="Instagram">📸</a>`); $('ft-ig').href = 'https://instagram.com/' + TIENDA.instagram; } else $('ft-ig').hidden = true;
+  if(TIENDA.tiktok){ soc.push(`<a href="https://tiktok.com/@${esc(TIENDA.tiktok)}" target="_blank" rel="noopener" aria-label="TikTok">🎵</a>`); $('ft-tt').href = 'https://tiktok.com/@' + TIENDA.tiktok; $('ft-tt').hidden = false; }
+  if(TIENDA.whatsapp) soc.push(`<a href="${waLink('Hola! Tengo una consulta sobre El Coco Didácticos')}" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>`);
+  if(TIENDA.email) soc.push(`<a href="mailto:${esc(TIENDA.email)}" aria-label="Email">✉️</a>`);
+  $('ft-soc').innerHTML = soc.join('');
+}
+
+function moverReels(dir){ const r = $('reel-row'); r.scrollBy({ left: dir * r.clientWidth * .8, behavior: 'smooth' }); }
+function sonidoReel(btn, ev){
+  ev.stopPropagation();
+  const v = btn.parentElement.querySelector('video'); const activar = v.muted;
+  $('reel-row').querySelectorAll('video').forEach(x => { x.muted = true; }); $('reel-row').querySelectorAll('.snd').forEach(b => b.textContent = '🔇');
+  if(activar){ v.muted = false; v.play().catch(()=>{}); btn.textContent = '🔊'; }
 }
 
 function renderChips(){
@@ -1311,7 +1471,7 @@ addEventListener('resize', () => renderDock());
   $('grid').innerHTML = Array(8).fill('<div class="skel"></div>').join('');
   PRODUCTOS = await cargarCatalogo();
   cargar();
-  textosDinamicos(); renderChips(); renderGrid(); renderDock(); renderReels(); pintarCoco(); jsonLD();
+  textosDinamicos(); renderBanner(); renderChips(); renderGrid(); renderDock(); renderReels(); renderResenas(); renderFooter(); pintarCoco(); jsonLD();
   if(tickCountdown()){ const iv = setInterval(() => { if(!tickCountdown()) clearInterval(iv); }, 1000); }
   revisarVueltaMP();
 })();
