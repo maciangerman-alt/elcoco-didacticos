@@ -1292,7 +1292,6 @@ const lblAdd = q => q ? '＋ Sumar<span class="lg"> otro</span>' : '＋ Sumar<sp
 function cardHTML(p){
   const [e, cl] = CAT_BADGE[p.categoria] || ['🎁',''];
   const q = enPack(p.id);
-  const edades = (p.edades||[]).map(x => `<i>${esc(String(x).replace(' años',''))}</i>`).join('');
   return `<article class="card ${q?'sel':''}" data-id="${p.id}">
     <div class="ph">
       <div class="badges"><span class="bdg ${cl}">${e} ${esc(p.categoria)}</span></div>
@@ -1301,7 +1300,7 @@ function cardHTML(p){
     <div class="info">
       <div class="nm">${esc(p.nombre)}</div>
       <div class="price"><b>${fmt(p.precio)}</b><span class="p5">${N}x1</span></div>
-      <div class="meta"><span class="ages">${edades}</span><span class="tr">${fmt(conTransferencia(p.precio))} <small>con transferencia</small></span></div>
+      <div class="meta"><span class="tr">${fmt(conTransferencia(p.precio))} <small>con transferencia</small></span></div>
       <div class="acts"><button class="a-ver" data-ver="${p.id}">Ver más</button><button class="a-add" data-add="${p.id}">${lblAdd(q)}</button></div>
     </div>
   </article>`;
