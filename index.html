@@ -57,7 +57,10 @@ nav.menu a.on{color:var(--acento-2)}
 .cd-b b{display:block;font-size:19px;font-weight:900;line-height:1.05;font-variant-numeric:tabular-nums}
 .cd-b span{font-size:8px;font-weight:800;color:#b3aa9d;letter-spacing:.6px}
 
-.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:26px 0 8px}
+.hero{padding:16px 0 6px}
+.hero .side{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;align-items:stretch}
+.hero .side-row{display:none}
+.hero .trust{height:100%}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--borde);border-radius:999px;padding:6px 8px 6px 10px;font-size:12px;font-weight:800;box-shadow:0 2px 8px rgba(30,20,10,.04)}
 .pill .tag{background:var(--negro);color:#fff;border-radius:999px;padding:3px 9px;font-size:11px}
@@ -115,11 +118,35 @@ h1 .o{color:var(--c1)}
 .cu{white-space:nowrap}
 .tr{white-space:nowrap;color:var(--verde);font-weight:900}
 .tr small{font-weight:800;opacity:.85}
-.inpack{border-top:1px solid var(--borde);margin-top:4px;padding-top:9px;display:none;justify-content:space-between;align-items:center;gap:6px}
-.card.sel .inpack{display:flex}
-.inpack span{font-size:12px;font-weight:900;color:var(--acento-2);white-space:nowrap}
-.inpack button{background:#F3F0EC;border-radius:999px;font-size:11px;font-weight:900;padding:6px 11px;white-space:nowrap}
-.inpack button:hover{background:var(--acento);color:#fff}
+.acts{display:flex;gap:6px;margin-top:auto;padding-top:8px}
+.acts button{flex:1;border-radius:10px;font-size:12px;font-weight:900;padding:9px 6px;white-space:nowrap;transition:background .15s,color .15s}
+.acts .a-ver{background:#fff;border:1.5px solid var(--borde);color:var(--texto)}
+.acts .a-ver:hover{border-color:var(--negro)}
+.acts .a-add{background:var(--acento);color:#fff;flex:1.25}
+.acts .a-add:hover{background:var(--acento-2)}
+.qbadge{position:absolute;right:8px;bottom:8px;z-index:2;background:var(--acento);color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:4px 9px;display:none;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.card.sel .qbadge{display:block}
+/* ---- Secciones por categoría ---- */
+.cat-sec{margin-bottom:34px}
+.cat-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.cat-hd h3{font-size:21px;font-weight:900;letter-spacing:-.4px}
+.cat-hd h3 small{font-size:12px;font-weight:800;color:var(--gris);margin-left:6px;letter-spacing:0}
+.cat-hd .cat-link{font-size:13px;font-weight:900;color:var(--acento-2);white-space:nowrap;background:none}
+.cat-grid .card:nth-child(n+5){display:none}
+.ver-mas{display:block;margin:14px auto 0;border:1.5px solid var(--negro);border-radius:999px;padding:10px 20px;font-size:13px;font-weight:900;background:#fff}
+.ver-mas:hover{background:var(--negro);color:#fff}
+.cat-back[hidden]{display:none}
+.cat-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:900;margin:0 0 12px;background:none;color:var(--acento-2)}
+/* ---- Ejemplo de pack (hero) ---- */
+.ej{margin-top:18px;background:#fff;border:1px solid var(--borde);border-radius:18px;padding:16px;display:flex;gap:16px;align-items:center;max-width:560px;box-shadow:0 6px 20px rgba(30,20,10,.05)}
+.ej-fotos{display:flex;align-items:center;gap:4px;flex:none}
+.ej-f{width:74px;height:74px;border-radius:12px;background:var(--img-bg);overflow:hidden;display:grid;place-items:center;font-size:28px;position:relative}
+.ej-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ej-mas{font-weight:900;color:var(--gris);font-size:14px}
+.ej-txt small{display:block;font-size:10px;font-weight:900;letter-spacing:.8px;color:var(--acento-2)}
+.ej-txt b{display:block;font-size:17px;font-weight:900;line-height:1.2;margin:2px 0}
+.ej-txt span{display:block;font-size:12px;color:var(--gris);font-weight:700}
+.ej-txt button{margin-top:9px;background:var(--negro);color:#fff;border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:900}
 .empty{grid-column:1/-1;text-align:center;padding:50px 0;color:var(--gris);font-weight:700}
 .skel{aspect-ratio:.72;border-radius:var(--radio);background:linear-gradient(90deg,#f5f2ee 25%,#faf8f5 50%,#f5f2ee 75%);background-size:200% 100%;animation:sk 1.2s infinite}
 @keyframes sk{to{background-position:-200% 0}}
@@ -195,7 +222,9 @@ footer b{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--
 .qty{display:inline-flex;align-items:center;border:1px solid var(--borde);border-radius:12px;height:44px}
 .qty button{width:42px;height:100%;font-size:18px;font-weight:700;color:var(--gris)}
 .qty b{min-width:30px;text-align:center;font-weight:900}
-.m-row{display:flex;align-items:center;gap:16px}
+.m-cta{display:flex;gap:10px;align-items:stretch}
+.m-cta .qty{height:auto;flex:none}
+.m-cta .btn-o{flex:1;height:54px;font-size:16px}
 .m-note{font-size:12px;font-weight:800;color:var(--acento-2);line-height:1.35}
 .btn-o{height:50px;border-radius:12px;background:linear-gradient(90deg,var(--acento-2),var(--acento));color:#fff;font-weight:900;font-size:15px;width:100%;box-shadow:0 6px 18px rgba(46,158,91,.28)}
 .btn-o:disabled{opacity:.45;box-shadow:none;cursor:not-allowed}
@@ -347,29 +376,39 @@ footer b{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--
 .q-tot b{font-size:24px}
 .q-back{font-size:12px;font-weight:900;color:var(--gris);margin-top:10px}
 /* ---- Banner de inicio ---- */
-.banner{margin-top:18px;border-radius:26px;overflow:hidden;position:relative;color:#fff;
-  background:radial-gradient(120% 140% at 85% 20%,#2E9E5B 0%,#1E6B40 38%,#2A1E15 78%);display:grid;grid-template-columns:1.1fr 1fr;min-height:0}
-.bn-txt{padding:30px 36px 28px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.bn-eye{font-size:13px;font-weight:900;letter-spacing:.4px;opacity:.9}
-.bn-big{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:clamp(72px,9vw,112px);line-height:.82;letter-spacing:-3px;margin:8px 0 4px}
-.bn-big span:nth-child(1){color:var(--amarillo)}.bn-big span:nth-child(3){color:#fff}
-.banner h1{font-size:clamp(22px,2.6vw,32px);font-weight:900;line-height:1.05;letter-spacing:-.6px}
+.banner{margin-top:18px;border-radius:28px;overflow:hidden;position:relative;color:#fff;
+  background:radial-gradient(90% 120% at 100% 0%,#2E9E5B 0%,#1B6A3E 42%,#22170F 100%);display:grid;grid-template-columns:1fr 1.05fr;gap:10px;padding:26px 36px;align-items:center}
+.banner::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.5px,transparent 1.5px);background-size:18px 18px;pointer-events:none}
+.bn-txt,.bn-vis{position:relative;z-index:2}
+.bn-eye{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:900;letter-spacing:.3px}
+.bn-head{display:flex;align-items:flex-end;gap:6px;margin:10px 0 6px}
+.bn-big{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;font-size:clamp(78px,8.4vw,112px);line-height:.8;letter-spacing:-3px;color:#fff;text-shadow:0 6px 0 rgba(0,0,0,.18)}
+.bn-big span:nth-child(1),.bn-big span:nth-child(3){color:var(--amarillo)}
+.bn-big span:nth-child(2){font-size:.62em;margin:0 2px}
+.bn-coco{width:104px;margin-bottom:-6px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));animation:cocoHola 3.2s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes cocoHola{0%,100%{transform:rotate(0)}10%{transform:rotate(-6deg)}20%{transform:rotate(5deg)}30%{transform:rotate(0)}}
+.banner h1{font-size:clamp(24px,2.7vw,34px);font-weight:900;line-height:1.08;letter-spacing:-.7px}
 .banner h1 em{font-style:normal;color:var(--amarillo)}
-.bn-sub{font-size:15px;font-weight:700;opacity:.9;margin-top:8px;max-width:420px;line-height:1.45}
-.bn-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.bn-pills span{background:#fff;color:var(--texto);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:900;display:inline-flex;gap:6px;align-items:center}
+.bn-sub{font-size:14.5px;font-weight:700;opacity:.85;margin-top:8px;max-width:430px;line-height:1.45}
 .bn-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.bn-ctas a,.bn-ctas button{height:48px;border-radius:12px;padding:0 18px;font-weight:900;font-size:15px;display:inline-flex;align-items:center;text-decoration:none}
-.bn-ctas .c1{background:var(--amarillo);color:var(--texto)}
-.bn-ctas .c2{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.45)}
-.bn-fotos{position:relative;min-height:280px}
-.bn-f{position:absolute;width:40%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:#F6EEE3;border:6px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.35);display:grid;place-items:center;font-size:64px}
+.bn-ctas a,.bn-ctas button{height:52px;border-radius:14px;padding:0 22px;font-weight:900;font-size:16px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.bn-ctas .c1{background:var(--amarillo);color:var(--texto);box-shadow:0 6px 0 #C99A1A}
+.bn-ctas .c1:active{transform:translateY(3px);box-shadow:0 3px 0 #C99A1A}
+.bn-ctas .c2{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.bn-vis{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:22px 20px 16px;backdrop-filter:blur(2px)}
+.bn-vis-t{font-size:11px;font-weight:900;letter-spacing:1px;color:#CFE9D8;text-align:center;margin-bottom:12px}
+.bn-eq{display:flex;align-items:center;gap:8px}
+.bn-f{flex:1;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#F6EEE3;border:4px solid #fff;box-shadow:0 12px 26px rgba(0,0,0,.3);display:grid;place-items:center;font-size:40px;position:relative}
 .bn-f img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.bn-f:nth-child(1){left:6%;top:16%;transform:rotate(-8deg)}
-.bn-f:nth-child(2){left:40%;top:6%;transform:rotate(6deg);z-index:2}
-.bn-f:nth-child(3){left:30%;top:44%;transform:rotate(-2deg);z-index:3}
-.bn-coco{position:absolute;left:-4%;bottom:-2%;width:30%;max-width:150px;z-index:5;filter:drop-shadow(0 10px 16px rgba(0,0,0,.35))}
-.bn-tag{position:absolute;right:6%;bottom:10%;z-index:4;background:var(--c1);color:#fff;font-weight:900;font-size:15px;border-radius:999px;padding:10px 16px;transform:rotate(-6deg);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.bn-f:nth-child(1){transform:rotate(-4deg)}.bn-f:nth-child(3){transform:rotate(3deg) translateY(-6px)}.bn-f:nth-child(5){transform:rotate(-2deg)}
+.bn-op{flex:none;width:28px;height:28px;border-radius:50%;background:var(--amarillo);color:var(--texto);display:grid;place-items:center;font-weight:900;font-size:18px;line-height:1}
+.bn-res{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px}
+.bn-pay{background:#fff;color:var(--texto);border-radius:16px;padding:10px 18px;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.25);transform:rotate(-2deg)}
+.bn-pay small{display:block;font-size:10px;font-weight:900;letter-spacing:1px;color:var(--c1)}
+.bn-pay b{display:block;font-family:'Baloo 2',system-ui,sans-serif;font-size:34px;font-weight:800;line-height:1}
+.bn-pay span{display:block;font-size:11px;font-weight:800;color:var(--acento-2)}
+.m-only{display:none!important}
+.bn-sumar{display:block;margin:14px auto 0;color:#fff;font-size:13px;font-weight:900;background:none;text-decoration:underline;text-underline-offset:3px;opacity:.95}
 /* ---- Encabezado de sección estilo "eyebrow" ---- */
 .sec-hd{margin:46px 0 14px}
 .sec-hd small{display:block;font-size:11px;font-weight:900;letter-spacing:1px;color:var(--gris);text-transform:uppercase}
@@ -386,9 +425,13 @@ footer b{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800;color:var(--
 .rs-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
 .rs-prom{font-size:40px;font-weight:900;line-height:1}
 .rs-head small{font-size:11px;color:var(--gris);font-weight:800;line-height:1.3;display:block}
-.rs-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.rs-row{overflow:hidden;padding:2px 0 6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.rs-track{display:flex;width:max-content;animation:rsDesliza var(--rs-dur,45s) linear infinite}
+.rs-row:hover .rs-track,.rs-row.pausa .rs-track{animation-play-state:paused}
+@keyframes rsDesliza{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.rs-track{animation:none}.rs-row{overflow-x:auto}}
 .rs-row::-webkit-scrollbar{display:none}
-.rs-card{flex:none;width:260px;scroll-snap-align:start;background:#fff;border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.rs-card{flex:none;width:270px;margin-right:12px;background:#fff;border:1px solid var(--borde);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
 .rs-st{color:var(--amarillo);font-size:14px;letter-spacing:1px}
 .rs-card p{font-size:13px;line-height:1.5;color:var(--texto);flex:1}
 .rs-who{display:flex;gap:10px;align-items:center;border-top:1px solid var(--borde);padding-top:10px}
@@ -453,7 +496,7 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
 .wa-float{position:fixed;right:16px;bottom:calc(var(--dock-h) + 14px + env(safe-area-inset-bottom));z-index:45;width:52px;height:52px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.2)}
 .wa-float svg{width:28px;height:28px}
 
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr;gap:20px}}
+@media(max-width:900px){.cat-grid .card:nth-child(n+5){display:flex}.cat-grid .card:nth-child(n+7){display:none}.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr;gap:20px}}
 @media(max-width:640px){
   .wrap{padding:0 14px}
   .hd{height:60px}.logo b{font-size:25px}.hd-help span{display:none}
@@ -461,15 +504,22 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
   nav.menu::-webkit-scrollbar{display:none}
   .cd{gap:10px}.cd-t{font-size:12px}.cd-b{min-width:38px}.cd-b b{font-size:16px}
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat-grid .card:nth-child(n+5){display:none}.cat-hd h3{font-size:18px}.cat-sec{margin-bottom:26px}
+  .ej{padding:12px;gap:12px}.ej-f{width:54px;height:54px;border-radius:10px}.ej-txt b{font-size:15px}
   .card .ph{margin:8px 8px 0}.card .info{padding:10px 10px 12px}
   .card .nm{font-size:11.5px;min-height:29px}.price b{font-size:16px}
   .meta .ages{display:none}
-  .inpack{flex-direction:column;align-items:stretch}.inpack button{padding:7px}
+  .acts{gap:5px}.acts button{font-size:11.5px;padding:9px 4px;border-radius:9px}.acts .lg{display:none}
   .how{grid-template-columns:1fr}
   .ov{padding:0;align-items:flex-end}
   .modal{grid-template-columns:1fr;border-radius:22px 22px 0 0;max-height:92vh;overflow-y:auto}
-  .m-img{min-height:0;aspect-ratio:1.15}
-  .m-body{padding:20px 18px calc(18px + env(safe-area-inset-bottom))}
+  .m-img{min-height:0;aspect-ratio:auto;height:min(38vh,330px)}
+  .m-body{padding:18px 18px 0;overflow:visible;gap:10px}
+  .m-body h3{font-size:19px}
+  .m-cta{position:sticky;bottom:0;z-index:4;background:#fff;margin:4px -18px 0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -8px 20px rgba(30,20,10,.08);border-top:1px solid var(--borde);order:99}
+  .m-cta .btn-o{height:56px;font-size:17px}
+  .m-cta .qty button{width:38px}
+  .m-tags{padding-bottom:6px}
   .toast{top:auto;bottom:calc(var(--dock-h) + 14px + env(safe-area-inset-bottom));right:12px;left:12px;max-width:none;transform:translateY(220%)}
   .toast.on{transform:none;opacity:1;visibility:visible}
   .slot{width:31px;height:31px}
@@ -479,20 +529,29 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
   .vs-notas{grid-template-columns:1fr}
   .q-ops{grid-template-columns:1fr}
   .faq-grid,.ct-grid{grid-template-columns:1fr}
-  .banner{grid-template-columns:1fr;min-height:0;border-radius:20px}
-  .bn-txt{padding:22px 18px 6px}
-  .bn-big{font-size:78px;letter-spacing:-2px}
+  .banner{grid-template-columns:1fr;border-radius:22px;padding:14px 14px 14px;gap:12px;margin-top:10px}
+  .bn-eye{display:none}
+  .m-only{display:block!important}.d-only{display:none!important}
+  .bn-head{margin:0 0 2px;justify-content:space-between;align-items:center}
+  .bn-big{font-size:76px;letter-spacing:-2px}
+  .bn-coco{width:78px;margin:0 4px 0 0}
+  .banner h1{font-size:22px}
   .bn-sub{display:none}
-  .bn-pills{display:none}
-  .bn-eye{font-size:11px}
-  .banner h1{font-size:21px}
-  .bn-ctas{flex-wrap:nowrap;margin-top:12px}
-  .bn-ctas a,.bn-ctas button{height:44px}
-  .bn-fotos{min-height:190px;margin:0 10px 8px}
-  .bn-f{width:38%;border-width:4px}
-  .bn-coco{width:26%;left:2%}
+  .bn-ctas{flex-wrap:nowrap;margin-top:12px;gap:8px}
+  .bn-vis{padding:12px 10px 12px;border-radius:18px;order:2}
+  .bn-vis-t{display:none}
+  .bn-eq{gap:4px}.bn-op{width:20px;height:20px;font-size:13px}
+  .bn-f{border-width:3px;border-radius:12px;font-size:26px}
+  .bn-f:nth-child(3){transform:rotate(3deg)}
+  .bn-res{margin-top:10px;gap:8px;justify-content:space-between}
+  .bn-pay{padding:7px 12px;transform:none;flex:1;text-align:left;border-radius:12px}
+  .bn-pay b{font-size:24px}
+  .bn-pay span{font-size:10.5px}
+  .bn-sumar{margin:0;flex:none;background:var(--amarillo);color:var(--texto);text-decoration:none;border-radius:12px;padding:0 12px;height:54px;font-size:12.5px;line-height:1.15;width:96px}
   .logo .lg-coco{width:36px;height:40px}
-  .bn-ctas a,.bn-ctas button{flex:1;justify-content:center;padding:0 10px;font-size:13.5px;white-space:nowrap}
+  .bn-ctas a,.bn-ctas button{flex:1;padding:0 10px;font-size:14px;white-space:nowrap;height:50px}
+  .bn-ctas .c2{flex:.8}
+  .hero{display:none}
   .reel-nav{display:none}
   .ft-in{grid-template-columns:1fr 1fr;gap:22px}
   .ft-logo{grid-column:1/-1}
@@ -535,23 +594,21 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
 <main class="wrap" id="top">
   <section class="banner" id="banner">
     <div class="bn-txt">
-      <div class="bn-eye">🥥 JUEGOS DIDÁCTICOS DE MADERA</div>
-      <div class="bn-big" aria-hidden="true"><span>3</span><span>x</span><span>1</span></div>
+      <div class="bn-eye">🥥 Juegos didácticos de madera</div>
+      <div class="bn-head"><div class="bn-big" aria-hidden="true"><span>3</span><span>x</span><span>1</span></div><img class="bn-coco" data-coco="saludando" alt="El Coco"></div>
       <h1>Elegí <em>3</em> juegos.<br>Pagás el precio de <em>1</em>.</h1>
-      <p class="bn-sub">Rompecabezas, encastres, seriaciones y más, pensados para nivel inicial.</p>
-      <div class="bn-pills" id="bn-pills"></div>
+      <p class="bn-sub">Rompecabezas, encastres, seriaciones y más, pensados para nivel inicial. Combinalos como quieras.</p>
       <div class="bn-ctas"><a class="c1" href="#juegos">Armar mi pack →</a><button class="c2" onclick="abrirQuiz()">🎯 Que el Coco elija</button></div>
     </div>
-    <div class="bn-fotos" id="bn-fotos"><div class="bn-f">🧩</div><div class="bn-f">🔷</div><div class="bn-f">📏</div><img class="bn-coco" data-coco="saludando" alt="El Coco"><span class="bn-tag">¡3 al precio de 1!</span></div>
+    <div class="bn-vis">
+      <div class="bn-vis-t">ASÍ DE FÁCIL</div>
+      <div class="bn-eq" id="bn-eq"><div class="bn-f">🧩</div><span class="bn-op">+</span><div class="bn-f">🔷</div><span class="bn-op">+</span><div class="bn-f">📏</div></div>
+      <div class="bn-res"><span class="bn-op">=</span><div class="bn-pay"><small>PAGÁS SOLO</small><b id="bn-precio"></b><span id="bn-tr"></span></div><button class="bn-sumar m-only" onclick="sumarEjemplo()">＋ Sumar estos 3</button></div>
+      <button class="bn-sumar d-only" onclick="sumarEjemplo()">＋ Sumar estos 3 a mi pack</button>
+    </div>
   </section>
 
   <section class="hero">
-    <div>
-      <div class="lead">
-        <b>Armá tu pack en <span class="o">pocos clicks</span></b>
-        <p>Tocá un juego para verlo en grande y sumarlo. Podés repetir el mismo o combinar distintos. Cada uno entra a tu pack y el 3x1 se activa al llegar a 3.</p>
-      </div>
-    </div>
     <div class="side">
       <div class="side-row">
         <a class="sbox" href="#faq"><div class="ic">💳</div><div><small>PAGO SEGURO</small><b>Mercado Pago</b><span id="sb-cuotas">Tarjeta, débito o dinero en cuenta</span></div></a>
@@ -569,6 +626,7 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6F685F" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     <input id="q" type="search" placeholder="Buscar juego por nombre" autocomplete="off">
   </label>
+  <button class="cat-back" id="cat-back" hidden onclick="verCategoria('Todas')">← Ver todas las categorías</button>
   <div class="grid" id="grid"></div>
 
   <section class="reels" id="reels" hidden>
@@ -722,13 +780,13 @@ footer .legal a.arrep{color:var(--texto);text-decoration:underline}
       <h3 id="m-n"></h3>
       <div class="lbl" id="m-e"></div>
       <div class="price" id="m-p"></div>
+      <div class="m-note" id="m-note"></div>
       <div class="coco-dice"><img class="coco s" data-coco="senalando" alt="El Coco"><div><small>El Coco te cuenta</small><p id="m-d"></p></div></div>
       <div class="entrega" id="m-entrega"></div>
-      <div class="m-row"><span class="lbl"><b>Cantidad</b></span>
+      <div class="m-cta">
         <div class="qty"><button onclick="mq(-1)" aria-label="Menos">−</button><b id="m-q">1</b><button onclick="mq(1)" aria-label="Más">+</button></div>
+        <button class="btn-o" id="m-add" onclick="agregarDesdeModal()">Sumar al pack</button>
       </div>
-      <div class="m-note" id="m-note"></div>
-      <button class="btn-o" id="m-add" onclick="agregarDesdeModal()">Sumar al pack</button>
       <div class="m-foot">Podés repetir el mismo juego o combinar distintos.</div>
       <div class="m-tags" id="m-tags"></div>
     </div>
@@ -757,7 +815,7 @@ const TIENDA = {
   // Reseñas REALES de clientas. La sección aparece sola cuando hay al menos una.
   // Formato: { texto: '...', nombre: 'Laura M.', lugar: 'Córdoba', estrellas: 5, fuente: 'WhatsApp' }
   resenas: [
-    { texto: 'Hermoso su trabajo, siempre impecable!! Muy lindo todo en perfecto estado 🫶👏👏', nombre: 'Majo E.', fuente: 'WhatsApp' },
+    { texto: 'Hermoso su trabajo, siempre impecable!! Muy lindo todo en perfecto estado 💕👏👏', nombre: 'Majo E.', fuente: 'WhatsApp' },
     { texto: 'Gracias, el mejor trabajo sin duda alguna, un año más elegí correctamente, super recomendable… compromiso y responsabilidad', nombre: 'Marcela', fuente: 'WhatsApp' },
     { texto: 'Les encantaron los cajoncitos conejos a mis niños. Muy felices ❤️', nombre: 'Marisa', fuente: 'WhatsApp' },
     { texto: 'Siempre tan cumplida con nosotras y hermosos tus trabajos ❤️👏', nombre: 'Carla I.', fuente: 'WhatsApp' },
@@ -979,8 +1037,12 @@ function thumb(p){ return p ? imgTag(p, 160, 'alt=""', `this.replaceWith(documen
    ========================================================= */
 const CAT_BADGE = {
   'Rompecabezas':['🧩','o'], 'Encastres':['🔷',''], 'Apilables':['🗼','y'], 'Seriaciones':['📏',''],
-  'Mapas':['🗺️',''], 'Lúdicos':['🎲','y'], 'Educativos':['🔤','o'], 'Enhebradores':['🧵',''],
+  'Mapas':['🗺️',''], 'Lúdicos':['🎲','y'], 'Educativos':['🔤','o'], 'Enhebradores':['🧵',''], 'Importados':['🌎','y'],
 };
+// Orden de las categorías en la tienda (las que no estén acá van al final)
+const ORDEN_CAT = ['Importados', 'Encastres', 'Seriaciones', 'Apilables', 'Rompecabezas', 'Educativos', 'Lúdicos', 'Mapas', 'Enhebradores'];
+const MIN_SECCION = 3;   // categorías con menos juegos se juntan en "Más juegos"
+const posCat = c => { const i = ORDEN_CAT.indexOf(c); return i < 0 ? 99 : i; };
 function textosDinamicos(){
   const c = CONFIG, gratis = fmt(c.envioGratisDesde);
   const cuotas = c.cuotasSinInteres > 1 ? `Hasta ${c.cuotasSinInteres} cuotas sin interés` : '';
@@ -1178,16 +1240,7 @@ function jsonLD(){
 }
 
 /* ---------- Banner ---------- */
-function renderBanner(){
-  const cats = ['Rompecabezas','Encastres','Seriaciones','Apilables','Educativos'];
-  const elegidos = [];
-  for(const c of cats){ const p = PRODUCTOS.find(x => x.categoria === c && x.img && !elegidos.includes(x)); if(p) elegidos.push(p); if(elegidos.length === 3) break; }
-  const fotos = $('bn-fotos').querySelectorAll('.bn-f');
-  fotos.forEach(f => f.style.transition = 'none');
-  elegidos.forEach((p, i) => { if(fotos[i]) fotos[i].innerHTML = `${p.emoji || '🧸'}${imgTag(p, 600, `alt="${esc(p.nombre)}"`)}`; });
-  const cuotas = CONFIG.cuotasSinInteres > 1 ? `💳 ${CONFIG.cuotasSinInteres} cuotas sin interés` : '🔒 Pago seguro';
-  $('bn-pills').innerHTML = ['🪵 Hecho a mano', '🚚 Envíos a todo el país', cuotas].map(t => `<span>${t}</span>`).join('');
-}
+function renderBanner(){ /* el banner lo arma renderEjemplo() con el trío de ejemplo */ }
 
 /* ---------- Reseñas reales ---------- */
 function renderResenas(){
@@ -1202,9 +1255,11 @@ function renderResenas(){
     $('rs-st').textContent = '★'.repeat(Math.round(prom)) + '☆'.repeat(5 - Math.round(prom));
     $('rs-cant').textContent = conEst.length === 1 ? '1 opinión' : `Promedio de ${conEst.length} opiniones`;
   } else { $('rs-prom').textContent = ''; $('rs-st').textContent = ''; $('rs-cant').textContent = `${rs.length} mensaje${rs.length > 1 ? 's' : ''} de clientas`; }
-  $('rs-row').innerHTML = rs.map(r => { const e = Math.max(1, Math.min(5, Number(r.estrellas) || 5)); const wa = /whats/i.test(r.fuente || ''); return `<div class="rs-card${wa ? ' wa' : ''}">
+  const cards = rs.map(r => { const e = Math.max(1, Math.min(5, Number(r.estrellas) || 5)); const wa = /whats/i.test(r.fuente || ''); return `<div class="rs-card${wa ? ' wa' : ''}">
     ${wa ? '<div class="rs-src">💬 MENSAJE DE WHATSAPP</div>' : `<div class="rs-st">${'★'.repeat(e)}${'☆'.repeat(5 - e)}</div>`}<p>${esc(r.texto)}</p>
     <div class="rs-who"><div class="rs-av">${esc(r.nombre.trim()[0].toUpperCase())}</div><div><b>${esc(r.nombre)}</b><span>${esc(r.lugar || (wa ? 'Clienta' : 'Compra online'))}</span></div></div></div>`; }).join('');
+  // Carrusel que se desliza solo (se pausa al pasar el mouse o tocarlo). Va duplicado para que no corte.
+  $('rs-row').innerHTML = `<div class="rs-track" style="--rs-dur:${Math.max(30, rs.length * 8)}s">${cards}<div style="display:contents" aria-hidden="true">${cards}</div></div>`;
 }
 
 /* ---------- Footer ---------- */
@@ -1229,10 +1284,11 @@ function sonidoReel(btn, ev){
 function renderChips(){
   const cats = {};
   PRODUCTOS.forEach(p => cats[p.categoria] = (cats[p.categoria]||0) + 1);
-  const orden = Object.keys(cats).sort((a,b) => cats[b]-cats[a]);
+  const orden = Object.keys(cats).sort((a,b) => posCat(a) - posCat(b) || cats[b] - cats[a]);
   $('chips').innerHTML = [['Todas', PRODUCTOS.length, '']].concat(orden.map(c => [c, cats[c], (CAT_BADGE[c]||['🎁'])[0]]))
     .map(([c,n,e]) => `<button class="chip ${c===catSel?'on':''}" data-c="${esc(c)}">${e?e+' ':''}${esc(c)} <small>${n}</small></button>`).join('');
 }
+const lblAdd = q => q ? '＋ Sumar<span class="lg"> otro</span>' : '＋ Sumar<span class="lg"> al pack</span>';
 function cardHTML(p){
   const [e, cl] = CAT_BADGE[p.categoria] || ['🎁',''];
   const q = enPack(p.id);
@@ -1240,13 +1296,13 @@ function cardHTML(p){
   return `<article class="card ${q?'sel':''}" data-id="${p.id}">
     <div class="ph">
       <div class="badges"><span class="bdg ${cl}">${e} ${esc(p.categoria)}</span></div>
-      <img data-src="${esc(imgUrl(p,500))}" data-alt="${esc(imgUrls(p,500).slice(1).join('|'))}" alt="${esc(p.nombre)}"><span class="emo">${p.emoji||'🧸'}</span>${videoDe(p.id) ? '<span class="vbadge">▶ Video</span>' : ''}
+      <img data-src="${esc(imgUrl(p,500))}" data-alt="${esc(imgUrls(p,500).slice(1).join('|'))}" alt="${esc(p.nombre)}"><span class="emo">${p.emoji||'🧸'}</span>${videoDe(p.id) ? '<span class="vbadge">▶ Video</span>' : ''}<span class="qbadge">✓ ${q} en tu pack</span>
     </div>
     <div class="info">
       <div class="nm">${esc(p.nombre)}</div>
       <div class="price"><b>${fmt(p.precio)}</b><span class="p5">${N}x1</span></div>
       <div class="meta"><span class="ages">${edades}</span><span class="tr">${fmt(conTransferencia(p.precio))} <small>con transferencia</small></span></div>
-      <div class="inpack"><span>${q} en tu pack</span><button data-add="${p.id}">Sumar otro</button></div>
+      <div class="acts"><button class="a-ver" data-ver="${p.id}">Ver más</button><button class="a-add" data-add="${p.id}">${lblAdd(q)}</button></div>
     </div>
   </article>`;
 }
@@ -1256,15 +1312,64 @@ function filtrados(){
   return PRODUCTOS.filter(p => (catSel==='Todas' || p.categoria===catSel) && (!b || norm(p.nombre).includes(b)));
 }
 function renderGrid(){
-  const list = filtrados();
-  $('grid').innerHTML = list.length ? list.map(cardHTML).join('') : `<div class="empty">No encontramos juegos con “${esc(busq)}”.</div>`;
-  observarImgs($('grid'));
+  const g = $('grid');
+  $('cat-back').hidden = catSel === 'Todas';
+  if(catSel === 'Todas' && !busq.trim()){
+    // Vista por categorías: unos pocos juegos de cada una + botón "Ver todos"
+    g.className = 'secciones';
+    const grupos = {};
+    PRODUCTOS.forEach(p => (grupos[p.categoria] = grupos[p.categoria] || []).push(p));
+    const cats = Object.keys(grupos).sort((a,b) => posCat(a) - posCat(b));
+    const chicas = cats.filter(c => grupos[c].length < MIN_SECCION);
+    const secciones = cats.filter(c => grupos[c].length >= MIN_SECCION).map(c => [c, grupos[c], true]);
+    if(chicas.length) secciones.push(['Más juegos', chicas.flatMap(c => grupos[c]), false]);
+    g.innerHTML = secciones.map(([c, lista, filtrable]) => {
+      const e = c === 'Más juegos' ? '✨' : (CAT_BADGE[c] || ['🎁'])[0];
+      const mas = filtrable && lista.length > 4;
+      return `<section class="cat-sec"><div class="cat-hd"><h3>${e} ${esc(c)}<small>${lista.length} juego${lista.length > 1 ? 's' : ''}</small></h3>${mas ? `<button class="cat-link" data-cat="${esc(c)}">Ver todos →</button>` : ''}</div>
+        <div class="grid cat-grid">${lista.slice(0, 6).map(cardHTML).join('')}</div>
+        ${mas ? `<button class="ver-mas" data-cat="${esc(c)}">Ver los ${lista.length} juegos de ${esc(c)}</button>` : ''}</section>`;
+    }).join('');
+  } else {
+    g.className = 'grid';
+    const list = filtrados();
+    g.innerHTML = list.length ? list.map(cardHTML).join('') : `<div class="empty">No encontramos juegos con “${esc(busq)}”.</div>`;
+  }
+  observarImgs(g);
 }
+function verCategoria(c){
+  catSel = c; renderChips(); renderGrid();
+  document.documentElement.style.scrollBehavior = 'auto';
+  const y = $('juegos').getBoundingClientRect().top + scrollY - (document.querySelector('.hd-wrap, header')?.offsetHeight || 0) - 10;
+  scrollTo(0, Math.max(0, y)); document.documentElement.style.scrollBehavior = '';
+}
+
+/* ---------- Ejemplo de pack en el inicio ---------- */
+let ejemploIds = [];
+function renderEjemplo(){
+  const porPrecio = {};
+  PRODUCTOS.filter(p => p.img).forEach(p => (porPrecio[p.precio] = porPrecio[p.precio] || []).push(p));
+  // Un trío del mismo precio, mezclando categorías si se puede (y evitando que sean todos rompecabezas)
+  const tríos = Object.values(porPrecio).filter(l => l.length >= N).map(l => {
+    const vistos = new Set(), elegidos = [];
+    l.slice().sort((a,b) => (a.categoria === 'Rompecabezas') - (b.categoria === 'Rompecabezas')).forEach(p => { if(elegidos.length < N && !vistos.has(p.categoria)){ vistos.add(p.categoria); elegidos.push(p); } });
+    l.forEach(p => { if(elegidos.length < N && !elegidos.includes(p)) elegidos.push(p); });
+    return elegidos;
+  }).sort((a,b) => new Set(b.map(p => p.categoria)).size - new Set(a.map(p => p.categoria)).size || b[0].precio - a[0].precio);
+  const trio = tríos[0]; if(!trio){ $('bn-eq').closest('.bn-vis').hidden = true; return; }
+  ejemploIds = trio.map(p => p.id);
+  const pr = trio[0].precio;
+  $('bn-eq').innerHTML = trio.map(p => `<div class="bn-f" title="${esc(p.nombre)}">${p.emoji || '🧸'}${imgTag(p, 400, `alt="${esc(p.nombre)}"`)}</div>`).join('<span class="bn-op">+</span>');
+  $('bn-precio').textContent = fmt(pr);
+  $('bn-tr').textContent = `o ${fmt(conTransferencia(pr))} con transferencia`;
+}
+function sumarEjemplo(){ ejemploIds.forEach(id => agregar(id)); }
 function refrescarCard(id){
   const el = document.querySelector(`.card[data-id="${id}"]`); if(!el) return;
   const q = enPack(id);
   el.classList.toggle('sel', q > 0);
-  el.querySelector('.inpack span').textContent = `${q} en tu pack`;
+  el.querySelector('.qbadge').textContent = `✓ ${q} en tu pack`;
+  el.querySelector('.a-add').innerHTML = lblAdd(q);
 }
 
 function renderDock(){
@@ -1603,8 +1708,12 @@ function tickCountdown(){
 }
 
 $('chips').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; catSel = b.dataset.c; renderChips(); renderGrid(); });
+$('rs-row').addEventListener('touchstart', () => $('rs-row').classList.add('pausa'), { passive: true });
+$('rs-row').addEventListener('touchend', () => setTimeout(() => $('rs-row').classList.remove('pausa'), 1500), { passive: true });
 $('q').addEventListener('input', e => { busq = e.target.value; renderGrid(); });
 $('grid').addEventListener('click', e => {
+  const vc = e.target.closest('[data-cat]');
+  if(vc){ verCategoria(vc.dataset.cat); return; }
   const add = e.target.closest('[data-add]');
   if(add){ e.stopPropagation(); agregar(+add.dataset.add); return; }
   const card = e.target.closest('.card'); if(card) abrirModal(+card.dataset.id);
@@ -1616,7 +1725,7 @@ addEventListener('resize', () => renderDock());
   $('grid').innerHTML = Array(8).fill('<div class="skel"></div>').join('');
   PRODUCTOS = await cargarCatalogo();
   cargar();
-  textosDinamicos(); renderBanner(); renderChips(); renderGrid(); renderDock(); renderReels(); renderResenas(); renderFooter(); pintarCoco(); jsonLD();
+  textosDinamicos(); renderBanner(); renderEjemplo(); renderChips(); renderGrid(); renderDock(); renderReels(); renderResenas(); renderFooter(); pintarCoco(); jsonLD();
   if(tickCountdown()){ const iv = setInterval(() => { if(!tickCountdown()) clearInterval(iv); }, 1000); }
   revisarVueltaMP();
 })();
