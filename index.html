@@ -1738,7 +1738,11 @@ addEventListener('resize', () => renderDock());
 (async function init(){
   $('grid').innerHTML = Array(8).fill('<div class="skel"></div>').join('');
   PRODUCTOS = await cargarCatalogo();
-  PRODUCTOS.forEach(p => { const f = fotoPropia(p); if(f) p.img = `img/${f}.webp`; });
+  PRODUCTOS.forEach(p => {
+    const f = fotoPropia(p); if(f) p.img = `img/${f}.webp`;
+    // Las señas y la "única unidad" son cosas del Taller: en El Coco no se muestran
+    if(p.desc) p.desc = p.desc.replace(/\s*[^.]*(seña|única unidad)[^.]*\./gi, '').trim();
+  });
   cargar();
   textosDinamicos(); renderBanner(); renderEjemplo(); renderChips(); renderGrid(); renderDock(); renderReels(); renderResenas(); renderFooter(); pintarCoco(); jsonLD();
   if(tickCountdown()){ const iv = setInterval(() => { if(!tickCountdown()) clearInterval(iv); }, 1000); }
