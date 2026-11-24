@@ -963,7 +963,11 @@ const byId = id => PRODUCTOS.find(p => p.id === id);
 /* Fotos de Drive: se prueba primero el link directo de Google (más estable fuera de Drive)
    y si falla, el mismo link que usa el catálogo. */
 const driveId = p => { const m = (p.img || '').match(/[?&]id=([\w-]+)/) || (p.img || '').match(/\/d\/([\w-]+)/); return m ? m[1] : ''; };
-const imgUrls = (p, w) => { const id = driveId(p); return id
+/* Fotos propias de El Coco (carpeta img/ de este repo): id del juego → nombre del archivo.
+   Son recortes limpios del producto, sin logo ni precio del Taller. Si un juego está acá, se usa esta foto. */
+const FOTOS_PROPIAS = { 160: 'n-super-set-cocina-59', 161: 'n-flores-encastrables-300', 162: 'n-camiones-construccion-truck', 163: 'n-mundo-dinosaurio-6', 164: 'n-bebe-con-cochecito', 165: 'n-caja-huevos-encastrables', 169: 'n-mini-bloques-madera-escuela-bomberos', 170: 'n-super-camion-xl-balde', 171: 'n-set-camioncitos-construccion', 172: 'n-camion-cars-6-autitos', 173: 'n-patio-de-comida-premium', 174: 'n-dinosaurios-de-goma-4', 175: 'n-set-cocina-pizza', 176: 'n-tubitos-con-luces-6', 177: 'n-bebe-cochecito-banadera', 178: 'n-juego-te-pasteleria', 179: 'n-carrito-arrastre-carrusel', 180: 'n-trencito-formas-geometricas', 181: 'n-corta-frutas-madera', 182: 'n-laberinto-y-prono', 183: 'n-tren-vagones-figuras-imantado', 184: 'n-multifuncion-5-en-1', 185: 'n-camion-con-martillo', 186: 'n-abaco-multifuncion', 187: 'n-pista-autos-stitch', 188: 'n-frutas-para-cortar', 189: 'n-casitas-cubo-armar', 190: 'n-carrito-supermercado-28', 191: 'n-arena-magica-500', 192: 'n-gimnasio-musical-bebes', 193: 'n-bloques-magneticos-34', 194: 'n-bloques-magneticos-barras-36', 195: 'n-masas-foamy-combo-6', 196: 'n-set-cocina-10-piezas' };
+const fotoPropia = p => FOTOS_PROPIAS[p && p.id];
+const imgUrls = (p, w) => { const f = fotoPropia(p); if(f) return [w <= 480 ? `img/s/${f}.webp` : `img/${f}.webp`]; const id = driveId(p); return id
   ? [`https://lh3.googleusercontent.com/d/${id}=w${w}`, `https://drive.google.com/thumbnail?id=${id}&sz=w${Math.max(w,1000)}`]
   : (p.img ? [p.img] : []); };
 const imgUrl = (p, w) => imgUrls(p, w)[0] || '';
@@ -1729,6 +1733,7 @@ addEventListener('resize', () => renderDock());
 (async function init(){
   $('grid').innerHTML = Array(8).fill('<div class="skel"></div>').join('');
   PRODUCTOS = await cargarCatalogo();
+  PRODUCTOS.forEach(p => { const f = fotoPropia(p); if(f) p.img = `img/${f}.webp`; });
   cargar();
   textosDinamicos(); renderBanner(); renderEjemplo(); renderChips(); renderGrid(); renderDock(); renderReels(); renderResenas(); renderFooter(); pintarCoco(); jsonLD();
   if(tickCountdown()){ const iv = setInterval(() => { if(!tickCountdown()) clearInterval(iv); }, 1000); }
